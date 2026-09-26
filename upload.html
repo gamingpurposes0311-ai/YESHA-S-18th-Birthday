@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e5eee5">
+  <meta name="description" content="Share photos and videos from Yesha's debut celebration.">
+  <title>Share Your Memories | Yesha's Debut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="site-config.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="upload.js" defer></script>
+</head>
+<body class="upload-page">
+  <header class="upload-page-header">
+    <a class="upload-wordmark" href="./" aria-label="Back to the debut invitation"><span>Y</span><span>YESHA'S DEBUT<br><small>EIGHTEENTH BIRTHDAY</small></span></a>
+    <a class="upload-back-link" href="./#memories">Debut Memories <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="upload-page-main">
+    <section class="upload-page-intro" aria-labelledby="upload-title">
+      <p class="eyebrow eyebrow-dark">A NIGHT TO REMEMBER · SCAN · UPLOAD · SHARE</p>
+      <h1 id="upload-title">Share your<br><em>memories.</em></h1>
+      <p>Capture the moments and share your favorite photos from <span id="upload-celebrant">Yesha</span>'s Debut.</p>
+      <div class="upload-quota"><strong id="quota-number">18</strong><span>memories available<br>for this celebration</span></div>
+    </section>
+    <p class="upload-availability" id="upload-availability" role="status" aria-live="polite">Camera-roll uploads open on event day.</p>
+    <form class="upload-form upload-page-form" id="guest-upload-form">
+      <div class="upload-heading">
+        <div><p class="eyebrow eyebrow-dark">YOUR CAMERA ROLL, YOUR WAY</p><h2>Leave a little memory</h2></div>
+        <span class="remaining-count" id="remaining-count">Checking spots…</span>
+      </div>
+      <label class="dropzone upload-picker" id="dropzone" for="media-input">
+        <input id="media-input" type="file" accept="image/*,video/*" multiple disabled>
+        <span class="drop-icon" aria-hidden="true">＋</span>
+        <strong>Choose photos or videos</strong>
+        <span>JPG, PNG, WebP, HEIC, MP4, MOV or WebM</span>
+        <span>Images up to 10 MB · Videos up to 100 MB</span>
+      </label>
+      <p class="selected-count" id="selected-count" aria-live="polite">No memories selected</p>
+      <div class="preview-grid upload-preview-grid" id="preview-grid" aria-live="polite"></div>
+      <div class="upload-fields upload-page-fields">
+        <label class="field-label" for="guest-name">Your name <span>optional</span><input id="guest-name" name="guestName" type="text" maxlength="60" autocomplete="name" placeholder="How should we credit you?"></label>
+        <label class="anonymous-toggle"><input id="anonymous-upload" type="checkbox"><span class="toggle-ui" aria-hidden="true"></span> Share anonymously</label>
+        <label class="field-label caption-field" for="guest-caption">Add a caption <span>optional · up to 300 characters</span><textarea id="guest-caption" name="caption" maxlength="300" rows="3" placeholder="A few words about this moment..."></textarea><span class="character-count" id="caption-count">0 / 300</span></label>
+      </div>
+      <div class="upload-footer">
+        <p class="privacy-note">Every memory is private until the organizer approves it for the gallery.</p>
+        <p class="auto-upload-note">Choose your photos once. They upload automatically.</p>
+      </div>
+      <div class="upload-progress" id="upload-progress" role="status" aria-live="polite" hidden><span class="progress-track"><span id="progress-fill"></span></span><span id="progress-label">Preparing your memories…</span></div>
+      <p class="upload-message" id="upload-message" role="status" aria-live="polite"></p>
+    </form>
+    <p class="upload-page-footer">Thank you for being part of <span id="footer-celebrant">Yesha</span>'s special night.</p>
+  </main>
+</body>
+</html>

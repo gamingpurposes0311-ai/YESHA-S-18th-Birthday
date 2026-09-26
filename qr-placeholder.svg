@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" role="img" aria-labelledby="title description">
+  <title id="title">Replace with the debut QR code</title>
+  <desc id="description">Placeholder image. Replace this file source with the QR code for the deployed upload page.</desc>
+  <rect width="440" height="440" fill="#fbf8f3"/>
+  <rect x="18" y="18" width="404" height="404" fill="none" stroke="#d8dfd5" stroke-width="2"/>
+  <path d="M48 112V48h64M328 48h64v64M48 328v64h64M392 328v64h-64" fill="none" stroke="#183d32" stroke-width="7"/>
+  <circle cx="220" cy="188" r="28" fill="none" stroke="#d86e59" stroke-width="2"/>
+  <path d="M220 171c-12 9-11 21 0 34 11-13 12-25 0-34Zm-17 17c9-12 21-11 34 0-13 11-25 12-34 0Z" fill="#d86e59"/>
+  <text x="220" y="254" fill="#183d32" font-family="Georgia,serif" font-size="19" text-anchor="middle">YOUR QR IMAGE GOES HERE</text>
+  <text x="220" y="281" fill="#6b786e" font-family="Arial,sans-serif" font-size="11" letter-spacing="2" text-anchor="middle">REPLACE THE IMAGE SRC AFTER DEPLOYMENT</text>
+</svg>

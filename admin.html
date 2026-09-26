@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183d32">
+  <meta name="description" content="Organizer moderation for Yesha's debut photo gallery.">
+  <title>Organizer Gallery Desk | Yesha's Debut</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" defer></script>
+  <script src="site-config.js" defer></script>
+  <script src="supabase-client.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="admin-page-header">
+    <a class="upload-wordmark" href="./" aria-label="Back to the debut invitation"><span>Y</span><span>YESHA'S DEBUT<br><small>ORGANIZER GALLERY DESK</small></span></a>
+    <a class="upload-back-link" href="./">View invitation <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="admin-page-main">
+    <section class="admin-login-panel" id="login-panel" aria-labelledby="login-title">
+      <p class="eyebrow eyebrow-dark">ORGANIZER ACCESS</p>
+      <h1 id="login-title">Welcome<br><em>back.</em></h1>
+      <p>Sign in with the organizer account to review guest memories.</p>
+      <form id="admin-login-form" class="admin-login-form">
+        <label class="field-label" for="admin-email">Email<input id="admin-email" type="email" autocomplete="username" required></label>
+        <label class="field-label" for="admin-password">Password<input id="admin-password" type="password" autocomplete="current-password" required></label>
+        <button class="button button-forest" id="login-button" type="submit" disabled>Sign in <span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="upload-message" id="login-message" role="status" aria-live="polite"></p>
+    </section>
+    <section class="admin-dashboard" id="dashboard" hidden>
+      <div class="organizer-heading"><div><p class="eyebrow eyebrow-dark">PRIVATE REVIEW</p><h1>Gallery desk</h1></div><button class="text-button" id="sign-out" type="button">Sign out</button></div>
+      <p class="admin-dashboard-intro">Review each memory before it appears in Debut Memories.</p>
+      <div class="admin-stats" id="admin-stats" aria-live="polite"></div>
+      <div class="admin-toolbar"><div class="admin-tabs" role="tablist" aria-label="Submission status"><button class="admin-tab is-active" type="button" data-status="pending">Pending <span id="pending-count">0</span></button><button class="admin-tab" type="button" data-status="approved">Approved <span id="approved-count">0</span></button><button class="admin-tab" type="button" data-status="rejected">Rejected <span id="rejected-count">0</span></button><button class="admin-tab" type="button" data-status="hidden">Hidden <span id="hidden-count">0</span></button></div><button class="text-button" id="download-all" type="button">Download approved collection</button></div>
+  <p class="admin-message" id="admin-message" role="status" aria-live="polite"></p>
+      <div class="admin-grid" id="admin-grid" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
+</html>
