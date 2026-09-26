@@ -9,6 +9,19 @@ let client;
 let currentStatus = "pending";
 let rows = [];
 
+const errorText = (error, fallback) => {
+  if (typeof error === "string" && error.trim()) return error;
+  if (error && typeof error.message === "string" && error.message.trim()) return error.message;
+  if (error && typeof error.error_description === "string") return error.error_description;
+  if (error && typeof error.msg === "string") return error.msg;
+  try {
+    const details = JSON.stringify(error);
+    return details && details !== "{}" ? `${fallback} Details: ${details}` : fallback;
+  } catch {
+    return fallback;
+  }
+};
+
 const formatDate = (value) => new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(new Date(value));
 const makeButton = (label, callback, className = "") => {
   const button = document.createElement("button");
@@ -213,20 +226,22 @@ document.getElementById("admin-login-form").addEventListener("submit", async (ev
   const button = document.getElementById("login-button");
   button.disabled = true;
   loginMessage.textContent = "Signing in…";
-  const { data, error } = await client.auth.signInWithPassword({
-    email: document.getElementById("admin-email").value.trim(),
-    password: document.getElementById("admin-password").value
-  });
-  button.disabled = false;
-  if (error) {
-    loginMessage.textContent = error.message;
-    return;
-  }
   try {
+    if (!client) throw new Error("Supabase is not configured. Check the Vercel environment variables and redeploy.");
+    const { data, error } = await client.auth.signInWithPassword({
+      email: document.getElementById("admin-email").value.trim(),
+      password: document.getElementById("admin-password").value
+    });
+    if (error) {
+      loginMessage.textContent = errorText(error, "Sign-in failed. Check your email and password.");
+      return;
+    }
     await initializeOrganizer();
   } catch (accessError) {
-    await client.auth.signOut();
-    showLogin(accessError.message || "Could not verify organizer access.");
+    if (client) await client.auth.signOut();
+    showLogin(errorText(accessError, "Could not verify organizer access. Check that the Supabase migrations were applied."));
+  } finally {
+    button.disabled = !client;
   }
 });
 document.getElementById("sign-out").addEventListener("click", async () => {
@@ -242,9 +257,12 @@ window.debutSupabaseReady.then(async (supabaseClient) => {
   const { data: { session } } = await client.auth.getSession();
   if (session) {
     try { await initializeOrganizer(); }
-    catch (error) { await client.auth.signOut(); showLogin(error.message || "Could not verify organizer access."); }
+    catch (error) {
+      await client.auth.signOut();
+      showLogin(errorText(error, "Could not verify organizer access. Check that the Supabase migrations were applied."));
+    }
   }
 }).catch((error) => {
-  showLogin(error.message || "Organizer tools are not configured yet.");
+  showLogin(errorText(error, "Organizer tools are not configured yet."));
   document.getElementById("login-button").disabled = true;
 });
