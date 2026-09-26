@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183d32">
+  <meta name="description" content="You're invited to celebrate Yesha's eighteenth birthday debut.">
+  <title>Yesha's Debut | An Evening in Bloom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Yesha's debut, home">
+      <span class="wordmark-initial">Y</span>
+      <span class="wordmark-copy">THE DEBUT<br><span>EIGHTEENTH BIRTHDAY</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#details">The evening</a>
+      <a href="#celebration">A little about the night</a>
+      <a class="nav-rsvp" href="#rsvp">RSVP <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85" alt="An enchanting garden celebration set for an evening gathering">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A night to remember · You are invited</p>
+        <h1 id="hero-title"><span class="hero-title-small">The debut of</span><span id="debutant-name" class="hero-name">Yesha</span><span class="hero-title-italic">in full bloom.</span></h1>
+        <p class="hero-intro">Eighteen years, a thousand little moments, and one beautiful night to celebrate them all. It wouldn't be the same without you.</p>
+        <a class="button button-light" href="#rsvp">Save your place <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-note" aria-hidden="true"><span>AN EVENING</span><span>UNDER THE STARS</span></div>
+      <a class="scroll-cue" href="#details"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span></a>
+      <div class="hero-side-note" aria-hidden="true">18 YEARS IN THE MAKING</div>
+    </section>
+
+    <section class="details section-wrap" id="details" aria-labelledby="details-title">
+      <div class="details-heading">
+        <p class="eyebrow eyebrow-dark">THE IMPORTANT THINGS</p>
+        <h2 id="details-title">Make an evening<br><em>of it.</em></h2>
+      </div>
+      <div class="details-main">
+        <p class="section-copy">A candlelit dinner, familiar faces, and a few happy tears. Join us as we celebrate this new chapter together.</p>
+        <div class="event-facts">
+          <div class="event-fact">
+            <span class="fact-index">01 / WHEN</span>
+            <p id="event-date">Date to be announced</p>
+            <span id="event-time" class="fact-subtext">6:00 in the evening</span>
+          </div>
+          <div class="event-fact">
+            <span class="fact-index">02 / WHERE</span>
+            <p id="event-venue">Venue to be announced</p>
+            <span id="event-location" class="fact-subtext">Location details to follow</span>
+          </div>
+        </div>
+        <div class="countdown" aria-label="Countdown to the celebration">
+          <p class="countdown-label">THE COUNTDOWN</p>
+          <div class="countdown-units" aria-live="polite">
+            <div><span id="days" class="count-number">--</span><span class="count-label">DAYS</span></div>
+            <span class="count-separator" aria-hidden="true">:</span>
+            <div><span id="hours" class="count-number">--</span><span class="count-label">HOURS</span></div>
+            <span class="count-separator" aria-hidden="true">:</span>
+            <div><span id="minutes" class="count-number">--</span><span class="count-label">MINUTES</span></div>
+          </div>
+          <p id="countdown-note" class="countdown-note">The date is being planned. Check back soon.</p>
+        </div>
+      </div>
+      <div class="details-mark" aria-hidden="true">18<span>✳</span></div>
+    </section>
+
+    <section class="celebration" id="celebration" aria-labelledby="celebration-title">
+      <div class="celebration-image-wrap">
+        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85" alt="An intimate celebration table dressed with flowers and candlelight" loading="lazy">
+        <span class="image-caption">A NIGHT MADE OF LITTLE MAGIC</span>
+      </div>
+      <div class="celebration-copy">
+        <p class="eyebrow eyebrow-dark">A MILESTONE, MADE TO SHARE</p>
+        <h2 id="celebration-title">Eighteen candles.<br><em>One full heart.</em></h2>
+        <p>From the first toast to the last song, this night is for the people who have made every year brighter. Come dressed for a celebration and ready to make a memory.</p>
+        <div class="celebration-signoff"><span class="signoff-rule"></span><span>With love, <strong id="signoff-name">Yesha</strong></span></div>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <p class="eyebrow">KINDLY REPLY</p>
+      <h2 id="rsvp-title">We'll save you<br><em>a little magic.</em></h2>
+      <p class="rsvp-copy">Let us know you're coming. We can't wait to celebrate with you.</p>
+      <div class="rsvp-form-wrap">
+        <iframe
+          class="rsvp-form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfuTPPCAPzBvNADlJmb6wy0ulGlIlmk2r95y5y-smfijhIFgg/viewform?embedded=true"
+          title="RSVP for Yesha's eighteenth birthday debut"
+          loading="lazy"
+          allowfullscreen>
+          Loading…
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-mark" href="#home">Y<span> · </span>18</a>
+    <p>MADE WITH LOVE FOR A NIGHT IN BLOOM</p>
+    <a href="#home" class="back-top">BACK TO TOP ↑</a>
+  </footer>
+</body>
+</html>
