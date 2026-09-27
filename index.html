@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js" defer></script>
   <script src="site-config.js" defer></script>
   <script src="supabase-client.js" defer></script>
   <script src="script.js" defer></script>
@@ -119,11 +118,13 @@
           <a class="button button-light share-upload-link" href="./upload.html">Open the upload page <span aria-hidden="true">↗</span></a>
         </div>
         <div class="qr-card">
-          <div class="qr-frame"><canvas id="qr-code" width="440" height="440" role="img" aria-label="QR code linking to the guest photo upload page"></canvas></div>
+          <div class="qr-frame">
+            <img id="qr-image" class="qr-image-link" src="QR.png" alt="QR code linking to the guest photo upload page">
+          </div>
           <p class="qr-caption">SCAN TO SHARE YOUR MEMORIES</p>
           <p class="qr-instructions">Scan the QR code and upload your favorite moments.</p>
           <div class="qr-actions">
-            <button class="button button-forest" id="download-qr" type="button">Download QR <span aria-hidden="true">↓</span></button>
+            <a class="button button-forest" id="download-qr" href="QR.png" download="yesha-debut-qr.png">Download QR <span aria-hidden="true">↓</span></a>
             <button class="text-button" id="print-qr" type="button">Print QR code</button>
           </div>
         </div>
