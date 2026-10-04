@@ -9,9 +9,42 @@ setText("debutant-name", debut.name);
 setText("signoff-name", debut.name);
 setText("event-date", debut.dateLabel);
 setText("event-time", debut.time);
-setText("event-venue", debut.venue);
+const venueLink = document.getElementById("event-venue");
+if (venueLink) {
+  venueLink.textContent = debut.venue;
+  venueLink.href = debut.venueMapUrl;
+}
 setText("event-location", debut.location);
 document.title = `${debut.name}'s Debut | An Evening in Bloom`;
+
+const heroImages = document.querySelectorAll(".hero-image");
+const heroSlides = debut.heroSlides || [];
+if (heroImages.length === 2 && heroSlides.length > 1) {
+  let activeHeroImage = 0;
+  let slideIndex = 0;
+
+  window.setInterval(() => {
+    let attempts = 0;
+    const loadNextSlide = () => {
+      slideIndex = (slideIndex + 1) % heroSlides.length;
+      const preload = new Image();
+      preload.onload = () => {
+        const nextHeroImage = (activeHeroImage + 1) % heroImages.length;
+        heroImages[nextHeroImage].src = heroSlides[slideIndex];
+        heroImages[nextHeroImage].classList.toggle("is-blurred", (debut.heroBlurSlides || []).includes(heroSlides[slideIndex]));
+        heroImages[nextHeroImage].classList.add("is-active");
+        heroImages[activeHeroImage].classList.remove("is-active");
+        activeHeroImage = nextHeroImage;
+      };
+      preload.onerror = () => {
+        attempts += 1;
+        if (attempts < heroSlides.length - 1) loadNextSlide();
+      };
+      preload.src = heroSlides[slideIndex];
+    };
+    loadNextSlide();
+  }, 5000);
+}
 
 const countdownIds = ["days", "hours", "minutes"];
 const countdownNote = document.getElementById("countdown-note");
@@ -34,21 +67,25 @@ if (Number.isFinite(targetDate)) {
 }
 
 const uploadUrl = new URL("upload.html", window.location.href).href;
-document.querySelector(".share-upload-link").href = uploadUrl;
-document.getElementById("qr-link").href = uploadUrl;
+const shareUploadLink = document.querySelector(".share-upload-link");
+if (shareUploadLink) shareUploadLink.href = uploadUrl;
+
 document.querySelectorAll(".celebrant-inline").forEach((element) => { element.textContent = debut.name; });
-document.getElementById("print-qr").addEventListener("click", () => window.print());
+const printQrButton = document.getElementById("print-qr");
+if (printQrButton) printQrButton.addEventListener("click", () => window.print());
 
 const qrImage = document.getElementById("qr-image");
 const downloadQr = document.getElementById("download-qr");
-const syncQrDownload = () => {
-  const imageUrl = new URL(qrImage.getAttribute("src"), window.location.href);
-  const extension = imageUrl.pathname.split(".").pop() || "png";
-  downloadQr.href = imageUrl.href;
-  downloadQr.download = `${debut.name.toLowerCase()}-debut-qr.${extension}`;
-};
-qrImage.addEventListener("load", syncQrDownload);
-syncQrDownload();
+if (qrImage && downloadQr) {
+  const syncQrDownload = () => {
+    const imageUrl = new URL(qrImage.getAttribute("src"), window.location.href);
+    const extension = imageUrl.pathname.split(".").pop() || "png";
+    downloadQr.href = imageUrl.href;
+    downloadQr.download = `${debut.name.toLowerCase()}-debut-qr.${extension}`;
+  };
+  qrImage.addEventListener("load", syncQrDownload);
+  syncQrDownload();
+}
 
 const lightbox = document.getElementById("lightbox");
 const openLightbox = (submission, mediaUrl) => {
