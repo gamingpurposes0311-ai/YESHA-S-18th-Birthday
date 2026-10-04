@@ -2,7 +2,7 @@ module.exports = (request, response) => {
   response.setHeader("Cache-Control", "no-store");
   response.setHeader("Content-Type", "application/json; charset=utf-8");
 
-  const url = process.env.SUPABASE_URL || "https://wqykpfhgadllzbmuknjz.supabase.co";
+  const url = process.env.SUPABASE_URL || "https://zjcnuoaultzqvbaknspg.supabase.co";
   const anonKey = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY;
 
   if (!anonKey) {
