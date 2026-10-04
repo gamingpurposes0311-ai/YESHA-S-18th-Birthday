@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#183d32">
+  <meta name="theme-color" content="#651c32">
   <meta name="description" content="You're invited to celebrate Yesha's eighteenth birthday debut.">
   <title>Yesha's Debut | An Evening in Bloom</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="site-config.js" defer></script>
@@ -24,6 +24,7 @@
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#details">The evening</a>
       <a href="#celebration">A little about the night</a>
+      <a href="#program">Program</a>
       <a href="#memories">Memories</a>
       <a class="nav-rsvp" href="#rsvp">RSVP <span aria-hidden="true">↗</span></a>
     </nav>
@@ -31,7 +32,8 @@
 
   <main>
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <img class="hero-image" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85" alt="An enchanting garden celebration set for an evening gathering">
+      <img class="hero-image is-active" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85" alt="An enchanting garden celebration set for an evening gathering" aria-hidden="true">
+      <img class="hero-image" alt="" aria-hidden="true">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-content">
         <p class="eyebrow"><span class="eyebrow-line"></span> A night to remember · You are invited</p>
@@ -59,7 +61,7 @@
           </div>
           <div class="event-fact">
             <span class="fact-index">02 / WHERE</span>
-            <p id="event-venue">Venue to be announced</p>
+            <p><a id="event-venue" target="_blank" rel="noopener noreferrer">Venue to be announced</a></p>
             <span id="event-location" class="fact-subtext">Location details to follow</span>
           </div>
         </div>
@@ -80,7 +82,7 @@
 
     <section class="celebration" id="celebration" aria-labelledby="celebration-title">
       <div class="celebration-image-wrap">
-        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85" alt="An intimate celebration table dressed with flowers and candlelight" loading="lazy">
+        <img src="Venues.jpg" alt="Paraiso Resort and Events Place set for a celebration" loading="lazy">
         <span class="image-caption">A NIGHT MADE OF LITTLE MAGIC</span>
       </div>
       <div class="celebration-copy">
@@ -88,6 +90,96 @@
         <h2 id="celebration-title">Eighteen candles.<br><em>One full heart.</em></h2>
         <p>From the first toast to the last song, this night is for the people who have made every year brighter. Come dressed for a celebration and ready to make a memory.</p>
         <div class="celebration-signoff"><span class="signoff-rule"></span><span>With love, <strong id="signoff-name">Yesha</strong></span></div>
+      </div>
+    </section>
+
+    <section class="program" id="program" aria-labelledby="program-title">
+      <div class="program-heading">
+        <p class="eyebrow">THE PEOPLE IN THE SPOTLIGHT</p>
+        <h2 id="program-title">Flow of The <em>program.</em></h2>
+        <p>People Who are Making a Difference.</p>
+      </div>
+      <div class="program-panels">
+        <article class="program-panel">
+          <div class="program-panel-heading">
+            <span class="program-number" aria-hidden="true">01</span>
+            <div><p class="program-kicker">A TRADITION OF LOVE</p><h3>18 Roses</h3></div>
+            <span class="program-count">18</span>
+          </div>
+          <ol>
+            <li>Jacob Fortin</li>
+            <li>Mark Niel Fortin</li>
+            <li>Nelson Fortin</li>
+            <li>Mark Froilan Cello</li>
+            <li>Von Primo Reyes</li>
+            <li>Julius Sto. Domingo</li>
+            <li>Miguel Caadan</li>
+            <li>Aeriest Zefth Uaje</li>
+            <li>Wayne Liban</li>
+            <li>Jared Buclatin</li>
+            <li>Burj Navarro</li>
+            <li>King Joseph Gregorio Tarantado</li>
+            <li>Dustin Gregorio</li>
+            <li>Karl Binondo</li>
+            <li>Ronald Reyes</li>
+            <li>Rexcel Reyes</li>
+            <li>Ramil Reyes</li>
+          </ol>
+        </article>
+        <article class="program-panel">
+          <div class="program-panel-heading">
+            <span class="program-number" aria-hidden="true">02</span>
+            <div><p class="program-kicker">A LIGHT FOR EVERY YEAR</p><h3>18 Candles</h3></div>
+            <span class="program-count">18</span>
+          </div>
+          <ol>
+            <li>Alexis Fortin</li>
+            <li>Ezra Fortin</li>
+            <li>Marielle Fortin</li>
+            <li>Zamiel Querubin</li>
+            <li>Nicole Lagar</li>
+            <li>Althea Idanan</li>
+            <li>Daphne Romasanta</li>
+            <li>Richill Alcantara</li>
+            <li>Stephanie Evangelista</li>
+            <li>Daphne Binondo</li>
+            <li>Clei Reyes</li>
+            <li>Michelle Hipolito</li>
+            <li>Hanna Gweneth Cello</li>
+            <li>Riza Jane Cortes</li>
+            <li>Naomei Salud</li>
+            <li>Mary Faith Chua</li>
+            <li>Faith Ramos</li>
+            <li>Zena Binondo</li>
+          </ol>
+        </article>
+        <article class="program-panel">
+          <div class="program-panel-heading">
+            <span class="program-number" aria-hidden="true">03</span>
+            <div><p class="program-kicker">A WISH FOR THE FUTURE</p><h3>18 Bills</h3></div>
+            <span class="program-count">18</span>
+          </div>
+          <ol>
+            <li>Jessica Querubin</li>
+            <li>Gerold Querubin</li>
+            <li>Rafael Fortin</li>
+            <li>Noemi Fortin</li>
+            <li>Marilyn Gregorio</li>
+            <li>Oscar Gregorio</li>
+            <li>Lovely Garcia</li>
+            <li>Mary Ann Hipolito</li>
+            <li>Michael Hipolito</li>
+            <li>Julieta Binondo</li>
+            <li>Melu Jean Binondo</li>
+            <li>May Sarmiento</li>
+            <li>Raquel Santos</li>
+            <li>Ferdinand Santos</li>
+            <li>Arnel Fortin</li>
+            <li>Maricor Fortin</li>
+            <li>Ramil Fortin</li>
+            <li>Roselyn Fortin</li>
+          </ol>
+        </article>
       </div>
     </section>
 
