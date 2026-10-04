@@ -71,6 +71,8 @@ a { color: inherit; }
 .event-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding: 1.4rem 0 1.7rem; border-top: 1px solid #d8ddd3; border-bottom: 1px solid #d8ddd3; }
 .fact-index, .countdown-label { color: var(--leaf); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.16em; }
 .event-fact p { margin: 0.8rem 0 0.3rem; color: var(--forest); font: 500 1.2rem var(--serif); }
+.event-fact a { text-decoration: underline; text-decoration-color: rgb(232 191 90 / 65%); text-underline-offset: 0.2em; cursor: pointer; }
+.event-fact a:hover { color: var(--sun); }
 .fact-subtext { color: #798078; font-size: 0.75rem; }
 .countdown { padding-top: 1.45rem; }
 .countdown-label { margin: 0 0 0.8rem; }
