@@ -107,7 +107,7 @@ a { color: inherit; }
 .program-panel h3 { margin: 0; color: var(--petal); font: 500 1.8rem/1.15 var(--serif); }
 .program-count { display: grid; width: 2.2rem; aspect-ratio: 1; place-items: center; border: 1px solid rgb(232 191 90 / 55%); border-radius: 50%; color: var(--sun); font-size: 0.75rem; }
 .program-panel ol { display: grid; gap: 0.15rem; margin: 0; padding: 0.8rem 0 0; list-style: none; counter-reset: participant; }
-.program-panel li { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); gap: 0.45rem; align-items: baseline; min-height: 1.9rem; color: rgb(255 255 255 / 92%); font-family: "Lora", Georgia, serif; font-size: 0.88rem; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; counter-increment: participant; }
+.program-panel li { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); gap: 0.45rem; align-items: baseline; min-height: 1.9rem; color: rgb(255 255 255 / 92%); font-size: 0.88rem; line-height: 1.5; overflow-wrap: anywhere; counter-increment: participant; }
 .program-panel li::before { color: var(--sun); content: counter(participant, decimal-leading-zero); font-size: 0.68rem; font-variant-numeric: tabular-nums; }
 
 .rsvp { padding: clamp(5rem, 9vw, 8rem) 1.5rem; background: var(--forest); color: white; text-align: center; }
