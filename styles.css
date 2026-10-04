@@ -69,6 +69,9 @@ a { color: inherit; }
 .details-main { padding-top: 0.1rem; }
 .section-copy { max-width: 490px; margin: 0 0 2.5rem; color: #69746b; font-size: 0.91rem; line-height: 1.8; }
 .event-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; padding: 1.4rem 0 1.7rem; border-top: 1px solid #d8ddd3; border-bottom: 1px solid #d8ddd3; }
+.attire-note { margin-top: 1.2rem; border-left: 2px solid var(--sun); padding: 0.8rem 1rem; background: rgb(255 255 255 / 5%); }
+.attire-note-label { margin: 0; color: var(--sun); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.16em; }
+.attire-note p:last-child { margin: 0.45rem 0 0; color: rgb(255 255 255 / 84%); font-size: 0.82rem; line-height: 1.65; }
 .fact-index, .countdown-label { color: var(--leaf); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.16em; }
 .event-fact p { margin: 0.8rem 0 0.3rem; color: var(--forest); font: 500 1.2rem var(--serif); }
 .event-fact a { text-decoration: underline; text-decoration-color: rgb(232 191 90 / 65%); text-underline-offset: 0.2em; cursor: pointer; }
