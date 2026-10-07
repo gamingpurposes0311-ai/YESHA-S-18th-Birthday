@@ -1,5 +1,13 @@
 const debut = window.debutConfig;
 
+const backgroundAudio = document.getElementById("background-audio");
+if (backgroundAudio) {
+  backgroundAudio.loop = true;
+  backgroundAudio.play().catch((error) => {
+    console.info("Background audio autoplay was blocked:", error.name);
+  });
+}
+
 const setText = (id, value) => {
   const element = document.getElementById(id);
   if (element) element.textContent = value;
