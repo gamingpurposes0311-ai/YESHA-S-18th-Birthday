@@ -11,8 +11,7 @@ window.debutConfig = Object.freeze({
   heroSlides: [
     "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85",
     "Venues.jpg",
-    "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85",
-    "shot.jpg"
+    "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85"
     // Add up to two more image filenames here, such as "hero-4.jpg" and "hero-5.jpg".
   ],
   heroBlurSlides: ["shot.jpg"]
